@@ -1,1 +1,8 @@
 <app-header></app-header>
+<main class="flex justify-center content-center flex-row w-full">
+    <div *ngFor="let notasRequest of notasArray" class="w-1/4">
+      <app-notes [notas]="notasRequest"></app-notes>
+    </div>
+</main>
+<app-adicao-notas></app-adicao-notas>
+<app-formulario></app-formulario>

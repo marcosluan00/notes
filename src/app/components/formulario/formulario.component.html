@@ -1,0 +1,15 @@
+<form class="w-full" (ngSubmit)="enviarFormulario()">
+  <mat-form-field class="w-full">
+    <mat-label for="titulo">Titulo da nota</mat-label>
+    <input matInput [(ngModel)]="formulario.titulo" id="titulo" name="titulo" >
+  </mat-form-field>
+
+  <mat-form-field class="w-full">
+    <mat-label for="descricao">Descrição</mat-label>
+    <textarea matInput [(ngModel)]="formulario.descricao" id="descricao" name="descricao"></textarea>
+  </mat-form-field>
+  <button mat-fab class="bg-violet-300 border-2 rounded-md w-10"
+  type="submit">
+    <mat-icon fontIcon="done"></mat-icon>
+  </button>
+</form>
