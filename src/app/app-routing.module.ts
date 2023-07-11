@@ -5,7 +5,8 @@ import { PaginasDeNotasComponent } from './pages/paginas-de-notas/paginas-de-not
 
 const routes: Routes = [
   { path: '', component: PaginaInicialComponent },
-  { path: 'notas', component: PaginasDeNotasComponent}
+  { path: 'notas', component: PaginasDeNotasComponent},
+  { path: '**', component: PaginasDeNotasComponent}
 ];
 
 @NgModule({
