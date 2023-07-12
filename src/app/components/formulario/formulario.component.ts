@@ -17,9 +17,13 @@ export class FormularioComponent {
   constructor( private notasService: NotasService, private rotas: Router ){}
 
   enviarFormulario(){
-    this.notasService.setNotas(this.formulario.titulo, this.formulario.descricao).subscribe(()=>{
-      this.reloadPage();
-    })
+    if(this.formulario.descricao ==''|| this.formulario.titulo ===''){
+      alert('Preencha os campos')
+    } else {
+      this.notasService.setNotas(this.formulario.titulo, this.formulario.descricao).subscribe(()=>{
+        this.reloadPage();
+      })
+    }
   }
   reloadPage() {
     const currentUrl = this.rotas.url;

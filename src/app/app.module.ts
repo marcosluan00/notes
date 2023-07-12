@@ -12,7 +12,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdicaoNotasComponent } from './components/adicao-notas/adicao-notas.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -25,7 +24,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     NotesComponent,
     PaginaInicialComponent,
     PaginasDeNotasComponent,
-    AdicaoNotasComponent,
     FormularioComponent
   ],
   imports: [

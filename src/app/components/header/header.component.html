@@ -1,10 +1,11 @@
 <header class="w-full bg-teal-600 p-1 flex justify-around content-center">
   <a routerLink="/">
-    <p class="text-slate-50 text-2xl font-bold uppercase text-center">{{ user }}</p>
+    <p class="text-slate-50 text-2xl font-bold uppercase pt-3">{{ user }}</p>
   </a>
-  <button mat-button (click)="abrirFormulario()"
-  class="bg-teal-200 border-teal-700 rounded-sm px-3
-  hover:bg-teal-400">
-    <p class="font-semibold capitalize text-center text-lg">Adicionar Nota</p>
-  </button>
+    <button class="border-2 font-bold h-12 border-teal-600 px-3 rounded-md
+    text-slate-900 bg-teal-50
+    text-xl
+    hover:bg-teal-700 hover:text-teal-50"
+    (click)="abrirFormulario()"> Adicionar nota </button>
+
 </header>
