@@ -20,9 +20,7 @@ export class HeaderComponent {
   abrirFormulario():void {
     const dialogRef = this.dialog.open(FormularioComponent)
 
-    dialogRef.afterClosed().subscribe(()=> {
-      alert("Anotado")
-    })
+    dialogRef.afterClosed().subscribe()
   }
 
 }

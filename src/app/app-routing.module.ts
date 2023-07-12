@@ -4,8 +4,10 @@ import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.co
 import { PaginasDeNotasComponent } from './pages/paginas-de-notas/paginas-de-notas.component';
 
 const routes: Routes = [
-  { path: '', component: PaginaInicialComponent },
-  { path: 'notas', component: PaginasDeNotasComponent}
+  { path: 'inicial', component: PaginaInicialComponent },
+  { path: 'notas', component: PaginasDeNotasComponent},
+  { path: '', redirectTo: '/inicial', pathMatch: 'full'},
+  { path: '**', component: PaginasDeNotasComponent}
 ];
 
 @NgModule({

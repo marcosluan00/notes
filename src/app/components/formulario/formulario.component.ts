@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  Router } from '@angular/router';
 import { NotasService } from 'src/app/services/notas.service';
 
 @Component({
@@ -13,12 +14,17 @@ export class FormularioComponent {
     descricao: ''
   }
 
-  constructor( private notasService: NotasService ){}
+  constructor( private notasService: NotasService, private rotas: Router ){}
 
   enviarFormulario(){
-    this.notasService.setNotas(this.formulario.titulo, this.formulario.descricao).subscribe(()=> {
-      alert('Anotado')
-      window.location.reload()
+    this.notasService.setNotas(this.formulario.titulo, this.formulario.descricao).subscribe(()=>{
+      this.reloadPage();
     })
+  }
+  reloadPage() {
+    const currentUrl = this.rotas.url;
+    this.rotas.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.rotas.navigateByUrl(currentUrl);
+    });
   }
 }
