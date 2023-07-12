@@ -28,7 +28,7 @@ jobs:
             messagingSenderId: "506316392823",
             appId: "1:506316392823:web:cc215ce38ab56f8fe9f972"
             }
-          }" > src/environments/enviroment.ts
+          }" > src/app/environments/enviroment.ts
 
       - name: Build e deploy no GitHub Pages
         run: |
