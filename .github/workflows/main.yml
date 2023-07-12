@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Configurar variáveis de ambiente
+        run: |
+          echo "export const environment = {
+            production: true,
+            firebaseConfig: {
+            apiKey: "AIzaSyDf_IUTJwUySEGpA7SOWh3w7y47XmOJBPs",
+            authDomain: "notes-95ced.firebaseapp.com",
+            projectId: "notes-95ced",
+            storageBucket: "notes-95ced.appspot.com",
+            messagingSenderId: "506316392823",
+            appId: "1:506316392823:web:cc215ce38ab56f8fe9f972"
+            }
+          }" > src/environments/environment.prod.ts
+
+      - name: Build e deploy no GitHub Pages
+        run: |
+          ng build --configuration production --base-href /notes/
+          npx angular-cli-ghpages --dir=docs
