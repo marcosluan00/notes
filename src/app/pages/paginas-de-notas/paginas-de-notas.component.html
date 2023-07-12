@@ -1,7 +1,13 @@
 <app-header></app-header>
 <main class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2
 mx-4 bg-teal-50 h-full">
-    <div *ngFor="let notasRequest of notasArray" async>
-      <app-notes [notas]="notasRequest"></app-notes>
+    <div *ngFor="let notasRequest of notasArray">
+        <app-notes [notas]="notasRequest"></app-notes>
+      </div>
+    <div *ngIf="notasArray.length <=0">
+      <p class="font-extrabold pt-5
+      text-justify text-2xl">
+        Sem notas no momento. Deixe sua mensagem
+      </p>
     </div>
 </main>
